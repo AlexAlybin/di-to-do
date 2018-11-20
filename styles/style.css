@@ -39,19 +39,23 @@ html {
 }
 
 .card-title{
-	float: left;
-	padding: 23px 0px 0px 25px;
+	position: absolute;
+	left: 15px;
+	top: 10px;
 	font: bold 24px Helvetica Neue, sans-serif;
+	border: none;
 
 }
 
 .delete-card-button{
-	padding: 15px 15px 0px 545px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
 }
 
 .card-list-items{
 	list-style-type: none;
-	padding: 0px 15px 0px 25px;
+	padding: 30px 15px 0px 25px;
 }
 
 .card-list-items li{
@@ -77,10 +81,11 @@ html {
 .card-add-item{
 	position:absolute;
 	left: 15px;
-	bottom: 15px;
+	bottom: 12px;
 	font: 20px Helvetica Neue, sans-serif;
 	color: #000000;
 	opacity: 0.5;
+	border: none;
 }
 
 .footer-add-icon{
