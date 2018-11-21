@@ -52,7 +52,8 @@ body{
 }
 
 .main-card{
-	position:relative;
+	display: flex;
+	flex-direction: column;
 	width: 580px;
 	height: 320px;
 	background-color: #FFFFFF;
@@ -84,6 +85,13 @@ body{
 	background: none;
 }
 
+.card-list-items{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding-inline-start: 12px;
+}
+
 .card-list-items li{
 	display: flex;
 	justify-content: flex-start;
@@ -94,9 +102,12 @@ body{
 	flex-shrink: 0;
 	height: 20px;	
 	width: 20px;	
+	margin-right: 8px;
+}
+
+.item-checkbox input{
 	border: 2px solid #7F7F7F;	
 	border-radius: 10px;
-	margin-right: 8px;
 }
 
 .item-text{
@@ -107,8 +118,13 @@ body{
 
 .card-add-item{
 	display: flex;
-	justify-content: flex-start;
 	align-items: flex-end;
+	margin-top: auto;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+
+.card-add-input{
 	font: 20px Helvetica Neue, sans-serif;
 	color: #000000;
 	opacity: 0.5;
