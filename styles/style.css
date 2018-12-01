@@ -44,7 +44,7 @@ body{
 	margin-left: 10px;
 }
 
-.cards-area{
+#cards-area{
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
@@ -76,26 +76,11 @@ body{
 }
 
 .delete-card-button{
-	margin-top: 10px;
 	margin-right: 10px;
-}
-
-.delete-card-button button{
-	border: none;
-	background: none;
-}
-
-.card-list-items{
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	padding-inline-start: 12px;
-}
-
-.card-list-items li{
-	display: flex;
-	justify-content: flex-start;
-	padding-bottom: 10px;
+    border: none;
+    background: url(../images/delete.svg);
+    width: 14px;
+    height: 18px;
 }
 
 .card-items-list{
@@ -149,15 +134,13 @@ input[type=checkbox]:checked + span.item-checkbox{
 	opacity: 0.5;
 }
 
-.card-add-item{
+.card-add-input{
 	display: flex;
 	align-items: flex-end;
+	width: 500px;
 	margin-top: auto;
 	margin-left: 15px;
 	margin-bottom: 10px;
-}
-
-.card-add-input{
 	font: 20px Helvetica Neue, sans-serif;
 	color: #000000;
 	opacity: 0.5;
@@ -175,10 +158,7 @@ input[type=checkbox]:checked + span.item-checkbox{
 	background: none;
 }
 
-.add-card-icon{
+#add-card-icon{
 	height: 60px;	
 	width: 60px;
 }
-	
-
-
