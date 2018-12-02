@@ -81,6 +81,11 @@ body{
     background: url(../images/delete.svg);
     width: 14px;
     height: 18px;
+    cursor: pointer;
+}
+
+.delete-card-button:focus{
+	outline: none;
 }
 
 .card-items-list{
@@ -160,6 +165,11 @@ label.checkbox-container > input[type=checkbox]:checked ~ label.item-text{
 .footer-add-icon button{
 	border: none;
 	background: none;
+	cursor: pointer;
+}
+
+.footer-add-icon button:focus{
+	outline: none;
 }
 
 #add-card-icon{
