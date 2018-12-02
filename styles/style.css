@@ -117,6 +117,10 @@ input[type=checkbox]:checked + span.item-checkbox{
     opacity: .5;
 }
 
+label.checkbox-container > input[type=checkbox]:checked ~ label.item-text{
+	color: red;
+}
+
 .checkbox-container .item-checkbox{
 	display: inline-block;
 	width: 18px;
