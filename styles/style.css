@@ -56,7 +56,7 @@ body{
 	flex-direction: column;
 	width: 580px;
 	height: 320px;
-	background-color: #FFFFFF;
+	background-color: #fff;
 	border-radius: 6px;
 	margin: 5px;
 }
@@ -116,29 +116,19 @@ body{
 	display: none;
 }
 
-.checkbox-container:hover .item-checkbox{
-	background-color: #ccc;
-}
-
 input[type=checkbox]:checked + span.item-checkbox{
-	background: url("../images/checked.svg");
+	background: url("../images/checked.png");
 	background-repeat: no-repeat;
-    background-size: 20px 20px;
-    opacity: .5;
-}
-
-label.checkbox-container > input[type=checkbox]:checked ~ label.item-text{
-	color: red;
+    background-size: 100% 100%;
+    border: 2px solid #000;
 }
 
 .checkbox-container .item-checkbox{
 	display: inline-block;
-	width: 18px;
-	height: 18px;
-	background-color: #eee;
-	border-radius: 3px;
-	border: 1px solid #9f9f9f;
-
+	width: 17px;
+	height: 17px;
+	border-radius: 5px;
+	border: 2px solid #9f9f9f;
 }
 
 .item-text{

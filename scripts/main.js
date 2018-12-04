@@ -1,10 +1,13 @@
 let addCardBtn = document.getElementById('add-card-button');
 addCardBtn.onclick = addNewCard;
+let cardCount = 0;
 
 function addNewCard(){
-	//Create new card element on page
 	let card = document.createElement('div');
 	card.className = 'main-card';
+	const cardId = cardCount++;
+	card.id = `card ${cardId}`;
+
 
 	let cardHeader = document.createElement('div');
 	cardHeader.setAttribute('class', 'card-header');
@@ -18,6 +21,7 @@ function addNewCard(){
 	cardHeader.appendChild(cardTitle);
 
 	let deleteCardBtn = document.createElement('button');
+	deleteCardBtn.dataset.myAtrribute = cardId 
 	deleteCardBtn.setAttribute('class', 'delete-card-button');
 	deleteCardBtn.onclick = deleteCard;
 	cardHeader.appendChild(deleteCardBtn);
@@ -43,7 +47,7 @@ function addNewCard(){
 function setCardTitle(e){
 	let newCardTitle = e.target.value;
 
-	if((e.key === 'Enter') && (newCardTitle != 0)){
+	if((e.key === 'Enter') && (newCardTitle.length !== 0)){
 		e.target.value = newCardTitle;
 		e.target.blur();
 		e.target.style.borderBottom = 'none';
@@ -52,14 +56,18 @@ function setCardTitle(e){
 
 function deleteCard(e){
 	if (confirm('Delete card?')) {
-	e.target.parentNode.parentNode.remove(this.parentNode);
+		const deleteButton = e.target
+		const cardToDeleteID = deleteButton.dataset.myAttribute
+		const cardToDelete = document.getElementById('`card ${cardToDeleteID}`')
+		cardToDelete.remove()
+	// e.target.dataset.myAttribute 
 	}
 }
 
 function addItem(e){
 	let newItemText = e.target.value;
 
-	if ((e.key === 'Enter') && (newItemText != 0)) {
+	if ((e.key === 'Enter') && (newItemText.length !== 0)) {
 
 	let cardItem = document.createElement('div');
 	cardItem.className = 'card-item';
