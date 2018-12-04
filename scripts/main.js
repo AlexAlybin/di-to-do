@@ -14,6 +14,8 @@ function addNewCard(){
 	cardTitle.setAttribute('name', 'card-title');
 	cardTitle.setAttribute('class', 'card-title');
 	cardTitle.setAttribute('placeholder', 'New title');
+	cardTitle.onkeydown = setCardTitle;
+	cardTitle.onclick = setTitleBorder;
 	cardHeader.appendChild(cardTitle);
 
 	let deleteCardBtn = document.createElement('button');
@@ -37,6 +39,21 @@ function addNewCard(){
 
 	//Add new card to page
 	document.getElementById('cards-area').appendChild(card);
+}
+
+function setCardTitle(e){
+	let newCardTitle = e.target.value;
+
+	if((e.key === 'Enter') && (newCardTitle != 0)){
+		e.target.value = newCardTitle;
+		e.target.blur();
+		e.target.style.borderBottom = 'none';
+	}
+}
+
+function setTitleBorder(e){
+	e.target.style.outline = 'none';
+	e.target.style.borderBottom = '2px solid black';
 }
 
 function deleteCard(e){
