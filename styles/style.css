@@ -75,6 +75,11 @@ body{
 	border: none;
 }
 
+.card-title:focus {
+	outline: none;
+	border-bottom: 2px solid black;
+}
+
 .delete-card-button{
 	margin-right: 10px;
     border: none;

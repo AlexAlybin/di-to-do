@@ -15,7 +15,6 @@ function addNewCard(){
 	cardTitle.setAttribute('class', 'card-title');
 	cardTitle.setAttribute('placeholder', 'New title');
 	cardTitle.onkeydown = setCardTitle;
-	cardTitle.onclick = setTitleBorder;
 	cardHeader.appendChild(cardTitle);
 
 	let deleteCardBtn = document.createElement('button');
@@ -49,11 +48,6 @@ function setCardTitle(e){
 		e.target.blur();
 		e.target.style.borderBottom = 'none';
 	}
-}
-
-function setTitleBorder(e){
-	e.target.style.outline = 'none';
-	e.target.style.borderBottom = '2px solid black';
 }
 
 function deleteCard(e){
