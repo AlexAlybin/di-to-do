@@ -1,18 +1,20 @@
-let addCardBtn = document.getElementById('add-card-button');
+const addCardBtn = document.getElementById('add-card-button');
 addCardBtn.onclick = addNewCard;
 let cardCount = 0;
+let itemCount = 0;
 
 function addNewCard(){
-	let card = document.createElement('div');
+	const card = document.createElement('div');
 	card.className = 'main-card';
 	const cardId = cardCount++;
-	card.id = `card ${cardId}`;
+	card.id = `card-${cardId}`;
 
+	console.log(card.id);
 
-	let cardHeader = document.createElement('div');
+	const cardHeader = document.createElement('div');
 	cardHeader.setAttribute('class', 'card-header');
 
-	let cardTitle = document.createElement('input');
+	const cardTitle = document.createElement('input');
 	cardTitle.setAttribute('type', 'text');
 	cardTitle.setAttribute('name', 'card-title');
 	cardTitle.setAttribute('class', 'card-title');
@@ -20,16 +22,16 @@ function addNewCard(){
 	cardTitle.onkeydown = setCardTitle;
 	cardHeader.appendChild(cardTitle);
 
-	let deleteCardBtn = document.createElement('button');
-	deleteCardBtn.dataset.myAtrribute = cardId 
+	const deleteCardBtn = document.createElement('button');
+	deleteCardBtn.dataset.deleteBtnId = cardId; 
 	deleteCardBtn.setAttribute('class', 'delete-card-button');
 	deleteCardBtn.onclick = deleteCard;
 	cardHeader.appendChild(deleteCardBtn);
 
-	let itemsList = document.createElement('div');
+	const itemsList = document.createElement('div');
 	itemsList.setAttribute('class', 'card-items-list');
 
-	let itemInput = document.createElement('input');
+	const itemInput = document.createElement('input');
 	itemInput.setAttribute('type', 'input');
 	itemInput.setAttribute('name', 'card-item-input');
 	itemInput.setAttribute('class', 'card-item-input');
@@ -45,7 +47,7 @@ function addNewCard(){
 }
 
 function setCardTitle(e){
-	let newCardTitle = e.target.value;
+	const newCardTitle = e.target.value;
 
 	if((e.key === 'Enter') && (newCardTitle.length !== 0)){
 		e.target.value = newCardTitle;
@@ -56,35 +58,33 @@ function setCardTitle(e){
 
 function deleteCard(e){
 	if (confirm('Delete card?')) {
-		const deleteButton = e.target
-		const cardToDeleteID = deleteButton.dataset.myAttribute
-		const cardToDelete = document.getElementById('`card ${cardToDeleteID}`')
-		cardToDelete.remove()
-	// e.target.dataset.myAttribute 
+		const cardToDeleteID = e.target.dataset.deleteBtnId;
+		const cardToDelete = document.getElementById(`card-${cardToDeleteID}`);
+		cardToDelete.remove();
 	}
 }
 
 function addItem(e){
-	let newItemText = e.target.value;
+	const newItemText = e.target.value;
 
 	if ((e.key === 'Enter') && (newItemText.length !== 0)) {
 
-	let cardItem = document.createElement('div');
+	const cardItem = document.createElement('div');
 	cardItem.className = 'card-item';
 
-	let checkboxContainer = document.createElement('label');
+	const checkboxContainer = document.createElement('label');
 	checkboxContainer.setAttribute('class', 'checkbox-container');
 
-	let checkboxInput = document.createElement('input');
+	const checkboxInput = document.createElement('input');
 	checkboxInput.setAttribute('type', 'checkbox');
 	checkboxInput.onchange = checkItem;
 	checkboxContainer.appendChild(checkboxInput);
 
-	let checkboxBackground = document.createElement('span');
+	const checkboxBackground = document.createElement('span');
 	checkboxBackground.setAttribute('class', 'item-checkbox');
 	checkboxContainer.appendChild(checkboxBackground);
 
-	let itemText = document.createElement('label');
+	const itemText = document.createElement('label');
 	itemText.setAttribute('class', 'item-text');
 	itemText.textContent = newItemText;
 
