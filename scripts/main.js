@@ -48,7 +48,7 @@ function deleteCard(e){
 function addItem(e){
 	let newItemText = e.target.value;
 
-	if (e.key === 'Enter') {
+	if ((e.key === 'Enter') && (newItemText != 0)) {
 
 	let cardItem = document.createElement('div');
 	cardItem.className = 'card-item';
