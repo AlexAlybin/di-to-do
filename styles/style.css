@@ -10,6 +10,14 @@ body{
 	justify-content: center;
 }
 
+.checked-item{
+	text-decoration: line-through;
+}
+
+.unchecked-item{
+	text-decoration: none;
+}
+
 .content-wrapper{
 	display: flex;
 	flex-direction: column;

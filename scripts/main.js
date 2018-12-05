@@ -68,6 +68,7 @@ function addItem(e){
 	const newItemText = e.target.value;
 
 	if ((e.key === 'Enter') && (newItemText.length !== 0)) {
+	const itemCountId = itemCount++;
 
 	const cardItem = document.createElement('div');
 	cardItem.className = 'card-item';
@@ -77,6 +78,7 @@ function addItem(e){
 
 	const checkboxInput = document.createElement('input');
 	checkboxInput.setAttribute('type', 'checkbox');
+	checkboxInput.dataset.checkboxId = itemCountId;
 	checkboxInput.onchange = checkItem;
 	checkboxContainer.appendChild(checkboxInput);
 
@@ -86,6 +88,7 @@ function addItem(e){
 
 	const itemText = document.createElement('label');
 	itemText.setAttribute('class', 'item-text');
+	itemText.id = `text-item-${itemCountId}`;
 	itemText.textContent = newItemText;
 
 	cardItem.appendChild(checkboxContainer);
@@ -99,104 +102,10 @@ function addItem(e){
 
 function checkItem(e){
 	if (e.target.checked) {
-	e.target.parentNode.nextSibling.style.textDecoration = 'line-through';
+	const textToCheck = document.getElementById(`text-item-${e.target.dataset.checkboxId}`);
+	textToCheck.classList.add('checked-item');
 	} else {
-	e.target.parentNode.nextSibling.style.textDecoration = 'none';
+	const textToCheck = document.getElementById(`text-item-${e.target.dataset.checkboxId}`);
+	textToCheck.classList.add('unchecked-item');
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// addCardBtn.onclick = function addNewCard(){
-// 	//Create new card element on page
-// 	let newCard = document.createElement('div');
-// 	newCard.className = 'main-card';
-// 	newCard.innerHTML = '<div class="card-header">' + 
-//               				'<input type="text" name="card-title" class="card-title" placeholder="Input card title">' + 
-//               				'<button class="delete-card-button"></button>' +
-//           				'</div>' +
-//           				'<div class="card-items-list">' +
-//           				'</div>' +
-//           				'<input type="text" name="card-item-input" placeholder="Add to-do" class="card-add-input">'
-
-
-
-
-//     //Add new card to page
-// 	document.getElementById('cards-area').appendChild(newCard);
-// }
-
-
-
-// 	let newCardDeleteBtn = document.createElement('button');
-// 	newCardDeleteBtn.className = 'delete-card-button';
-
-//     newCardDeleteBtn.addEventListener('click', deleteCard);
-
-
-
-// 	newCardItemInput.addEventListener('keydown', addListItem);
-
-
-
-//Remove card from page
-// function deleteCard(e) {
-// 	if (confirm('Delete card?')) {
-// 	e.target.parentNode.parentNode.remove(this.parentNode);
-// 	}
-// }
-
-//Add list item
-// function addListItem(e){
-// 	e.preventDefault;
-// //Get value from input field
-// 	let newItemText = e.target.value;
-
-// 	console.log(e.target.value);
-	
-// 	if (e.key === 'Enter') {
-
-// //Create new card list item
-// 	let cardItem = document.createElement('div');
-// 	cardItem.className = 'card-item';
-
-// // Create new checkbox container
-// 	let checkboxContainer = document.createElement('label');
-// 	checkboxContainer.className = 'checkbox-container';
-
-// 	let checkboxInput = document.createElement('input');
-// 	checkboxInput.setAttribute('type', 'checkbox');
-
-// 	let checkboxBackground = document.createElement('span');
-// 	checkboxBackground.className = 'item-checkbox';
-
-// // Add to checkbox field
-// 	checkboxContainer.appendChild(checkboxInput);
-// 	checkboxContainer.appendChild(checkboxBackground);
-
-// 	let itemText = document.createElement('label');
-// 	itemText.className = 'item-text';
-// 	itemText.textContent = newItemText;
-
-// //Add checbox container and text to card list item
-// 	cardItem.appendChild(checkboxContainer);
-// 	cardItem.appendChild(itemText);
-
-// //Add card item to card
-// 	e.target.previousSibling.appendChild(cardItem);
-// 	e.target.value = '';
-// 	}
-// }
