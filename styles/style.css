@@ -1,181 +1,185 @@
 /* comment line */
 
 html {
-  background-color: #F3F4F6;
+  background-color: #f3f4f6;
   font-size: 20px;
 }
 
-body{
-	display: flex;
-	justify-content: center;
+body {
+  display: flex;
+  justify-content: center;
 }
 
-.checked-item{
-	text-decoration: line-through;
+.checked-item {
+  text-decoration: line-through;
 }
 
-.unchecked-item{
-	text-decoration: none;
+.unchecked-item {
+  text-decoration: none;
 }
 
-.content-wrapper{
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	width: 1180px;
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
-
-.main-header{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 40px auto;
-	width: 100%;
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  width: 60%;
 }
 
-.di-to{
-	width: 101px;
-	height: 33px;
-	margin-right: 10px;
+.di-to {
+  max-width: 101px;
+  width: auto;
+  height: 33px;
+  margin-right: 10px;
 }
 
-.di-logo-line{
-	background-color: #000;
-	height: 5px;
-	width: 70%;
+.di-logo-line {
+  background-color: #000;
+  height: 5px;
+  width: 100%;
+  min-width: 150px;
+  max-width: 700px;
 }
 
-.di-do{
-	width: 46px;
-	height: 31px;
-	margin-left: 10px;
+.di-do {
+  max-width: 46px;
+  width: auto;
+  height: 31px;
+  margin-left: 10px;
 }
 
-#cards-area{
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	width: 100%;
+#cards-area {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1180px;
 }
 
-.main-card{
-	display: flex;
-	flex-direction: column;
-	width: 580px;
-	height: 320px;
-	background-color: #fff;
-	border-radius: 6px;
-	margin: 5px;
+.main-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 580px;
+  height: 320px;
+  background-color: #fff;
+  border-radius: 6px;
+  margin: 5px;
 }
 
-.card-header{
-	display: flex;
-	flex-direction: row nowrap;
-	justify-content: space-between;
-	align-items: center;
+.card-header {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card-title{
-	margin-top: 10px;
-	margin-left: 15px;
-	font: bold 24px Helvetica Neue, sans-serif;
-	border: none;
+.card-title {
+  margin-top: 10px;
+  margin-left: 15px;
+  font: bold 24px Helvetica Neue, sans-serif;
+  border: none;
 }
 
 .card-title:focus {
-	outline: none;
-	border-bottom: 2px solid black;
+  outline: none;
+  border-bottom: 2px solid black;
 }
 
-.delete-card-button{
-	margin-right: 10px;
-    border: none;
-    background: url(../images/delete.svg);
-    width: 14px;
-    height: 18px;
-    cursor: pointer;
+.delete-card-button {
+  margin-right: 10px;
+  border: none;
+  background: url(../images/delete.svg);
+  width: 14px;
+  height: 18px;
+  cursor: pointer;
 }
 
-.delete-card-button:focus{
-	outline: none;
+.delete-card-button:focus {
+  outline: none;
 }
 
-.card-items-list{
-	display: flex;
-	flex-direction: column;
-
+.card-items-list {
+  display: flex;
+  flex-direction: column;
 }
 
-.card-item{
-	display: flex;
-	flex-direction: row nowrap;
-	align-items: flex-start;
-	margin-top: 10px;
-	margin-left: 15px;
+.card-item {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-left: 15px;
 }
 
-.checkbox-container{
-	flex-shrink: 0;
-	cursor: pointer;
+.checkbox-container {
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
-.checkbox-container input{
-	display: none;
+.checkbox-container input {
+  display: none;
 }
 
-input[type=checkbox]:checked + span.item-checkbox{
-	background: url("../images/checked.png");
-	background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border: 2px solid #000;
+input[type="checkbox"]:checked + span.item-checkbox {
+  background: url("../images/checked.png");
+  background-repeat: no-repeat;
+  background-size: 102% 102%;
+  border: 2px solid #000;
 }
 
-.checkbox-container .item-checkbox{
-	display: inline-block;
-	width: 17px;
-	height: 17px;
-	border-radius: 5px;
-	border: 2px solid #9f9f9f;
+.checkbox-container .item-checkbox {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  border: 2px solid #9f9f9f;
 }
 
-.item-text{
-	margin-left: 8px;
-	font: 20px Helvetica Neue, sans-serif;
-	color: #000000;
-	opacity: 0.5;
+.item-text {
+  margin-left: 8px;
+  font: 20px Helvetica Neue, sans-serif;
+  color: #000000;
+  opacity: 0.5;
 }
 
-.card-item-input{
-	display: flex;
-	align-items: flex-end;
-	width: 500px;
-	margin-top: auto;
-	margin-left: 15px;
-	margin-bottom: 10px;
-	font: 20px Helvetica Neue, sans-serif;
-	color: #000000;
-	opacity: 0.5;
-	border: none;
+.card-item-input {
+  display: flex;
+  align-items: flex-end;
+  width: 90%;
+  margin-top: auto;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  font: 20px Helvetica Neue, sans-serif;
+  color: #000000;
+  opacity: 0.5;
+  border: none;
 }
 
-.footer-add-icon{
-	position: fixed;
-	right: 50px;
-	bottom: 50px;
+.footer-add-icon {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
 }
 
-.footer-add-icon button{
-	border: none;
-	background: none;
-	cursor: pointer;
+.footer-add-icon button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.footer-add-icon button:focus{
-	outline: none;
+.footer-add-icon button:focus {
+  outline: none;
 }
 
-#add-card-icon{
-	height: 60px;	
-	width: 60px;
+#add-card-icon {
+  height: 60px;
+  width: 60px;
 }
